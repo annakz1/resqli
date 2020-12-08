@@ -10,9 +10,10 @@ model = predict.Model()
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        prediction = model.predict_our_model(request.form['product'])
+        product_name = request.form['product']
+        prediction = model.predict_our_model(product_name)
 
-        return render_template('index.html', prediction=prediction)
+        return render_template('index.html', prediction=prediction, product_name=product_name)
 
     return render_template('index.html')
 
