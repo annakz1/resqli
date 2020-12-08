@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <title>My Webpage</title>-->
-<!--    <link rel='stylesheet' href="{{ url_for('static',filename='stylesheets/style.css') }}" />-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<h1>My Webpage</h1>-->
-<!--{{ a_variable }}-->
 
 <head>
     <meta charset="UTF-8"/>
@@ -77,7 +68,7 @@
         <div class="col-12 tm-page-cols-container">
             <div class="tm-page-col-left tm-welcome-box tm-bg-primary">
                 <div class="form_wrapper">
-                    <form action="{{ url_for('login') }}" method="post">
+                    <form action="{{ url_for('index') }}" method="post">
 <!--                        {% import 'forms.html' as forms %}-->
                         <dl>
                             <dt>Username</dt>
