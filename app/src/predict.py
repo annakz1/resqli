@@ -41,7 +41,7 @@ class Model:
 def main():
     model = Model()
 
-    in_str = "bla"
+    in_str = "Select Epigrams from the Greek Anthology"
     prediction = model.predict_our_model(in_str)
 
     print(in_str)
