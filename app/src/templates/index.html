@@ -130,115 +130,6 @@
                 </div>
             </section>
 
-            <!-- discount -->
-            <div class="container">
-                <div id="myCarousel" class="carousel slide banner_Client" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container">
-                                <div class="carousel-caption text">
-                                    <div class="row">
-                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                                            <div class="img_bg">
-                                                <h3>50% DISCOUNT<br> <strong class="black_nolmal">the latest collection</strong></h3>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                                            <div class="img_bg">
-                                                <figure><img src="../static/images/discount.jpg" /></figure>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="carousel-caption text">
-                                    <div class="row">
-                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                                            <div class="img_bg">
-                                                <h3>50% DISCOUNT<br> <strong class="black_nolmal">the latest collection</strong></h3>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                                            <div class="img_bg">
-                                                <figure><img src="../static/images/discount.jpg" /></figure>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="container">
-                                <div class="carousel-caption text">
-                                    <div class="row">
-                                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-                                            <div class="img_bg">
-                                                <h3>50% DISCOUNT<br> <strong class="black_nolmal">the latest collection</strong></h3>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                                            <div class="img_bg">
-                                                <figure><img src="../static/images/discount.jpg" /></figure>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- end discount -->
-            <!-- trending -->
-            <div class="trending">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-8 offset-md-2">
-                            <div class="title">
-                                <h2>Trending <strong class="black">Categories</strong></h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margitop">
-                            <div class="trending-box">
-                                <figure><img src="../static/images/1.jpg" /></figure>
-                                <h3>Outdoor</h3>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                            <div class="trending-box">
-                                <figure><img src="../static/images/2.jpg" /></figure>
-                                <h3>Living Room</h3>
-
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 margitop">
-                            <div class="trending-box">
-                                <figure><img src="../static/images/3.jpg" /></figure>
-                                <h3>Bedroom Lighting</h3>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- end trending -->
-
             <!-- our brand -->
             <div class="brand">
                 <div class="container">
@@ -287,7 +178,7 @@
                 </div>
             </div>
             <!-- end our brand -->
-            <!-- map -->
+            <!-- contact -->
             <div class="contact">
                 <div class="container-fluid padddd">
                     <div class="row">
@@ -300,14 +191,16 @@
                     </div>
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 padddd">
-                             <div class="map_section">
-                     <div id="map">
-                     </div>
-                   </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 padddd">
-                            <form class="main_form">
+                            <form class="main_form" action="{{ url_for('index') }}" method="post">
                                 <div class="row">
+                                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                        <select class="custom-select" name="product">
+                                          <option value="volvo">Volvo</option>
+                                          <option value="saab">Saab</option>
+                                          <option value="mercedes">Mercedes</option>
+                                          <option value="audi">Audi</option>
+                                        </select>
+                                    </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <input class="form-control" placeholder="Name" type="text" name="Name">
                                     </div>
@@ -321,7 +214,7 @@
                                         <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <button class="send">Send</button>
+                                        <input class="send" type="submit" value="Submit">
                                     </div>
                                 </div>
                             </form>
@@ -329,7 +222,26 @@
                     </div>
                 </div>
             </div>
-            <!-- end map -->
+            <!-- end contact -->
+            <!-- results -->
+            {% if prediction -%}
+                <div class="contact">
+                    <div class="container-fluid padddd">
+                        <div class="row">
+                            <div class="col-md-8 offset-md-2">
+                                <div class="title">
+                                    {% if prediction == 'Benign' -%}
+                                        <h2>Our Results: <strong class="green">{{ prediction }}</strong></h2>
+                                    {% else -%}
+                                        <h2>Our Results: <strong class="red">{{ prediction }}</strong></h2>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            <!-- end results -->
             <!--  footer -->
             <footer>
                 <div class="footer">
@@ -446,9 +358,9 @@
         });
       }
     </script>
-    <!-- google map js -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
-    <!-- end google map js --> 
+<!--    &lt;!&ndash; google map js &ndash;&gt;-->
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>-->
+<!--    &lt;!&ndash; end google map js &ndash;&gt; -->
     
 </body>
 
