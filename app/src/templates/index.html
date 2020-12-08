@@ -92,6 +92,13 @@
 
                                 <input type="submit" value="Submit">
                             </form>
+                            <div>
+                                {% if prediction -%}
+                                    prediction: {{ prediction }}
+                                {% else -%}
+                                    No prediction!
+                                {% endif %}
+                            </div>
                             <!--                </p>-->
                         </div>
                     </div>

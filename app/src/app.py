@@ -9,12 +9,14 @@ model = predict.Model()
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    error = None
+    if request.method == 'GET':
+        return render_template('index.html')
+
     if request.method == 'POST':
 
         prediction = model.predict_our_model(request.form['username'])
-        if "SQLi" == prediction:
-            return render_template('hello.html', name=prediction)
+
+        return render_template('index.html', prediction=prediction)
         # if request.form['username'] == "ofir":
         #    return render_template('hello.html')
         # if valid_login(request.form['username'],
@@ -24,7 +26,7 @@ def index():
         #     error = 'Invalid username/password'
     # the code below is executed if the request method
     # was GET or the credentials were invalid
-    return render_template('index.html', error=error)
+    return render_template('index.html')
 
 
 # @app.route('/')
