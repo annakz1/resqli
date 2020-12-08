@@ -186,7 +186,6 @@
                         <div class="col-md-8 offset-md-2">
                             <div class="title">
                                 <h2>Contact <strong class="black">Us</strong></h2>
-
                             </div>
                         </div>
                     </div>
@@ -234,9 +233,9 @@
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <h2>
                                         {% if pred.prediction == 'Benign' -%}
-                                            <strong class="green">* {{ pred.prediction }}</strong>
+                                            <strong class="green"> * {{ pred.prediction }}</strong>
                                         {% else -%}
-                                            <strong class="red">{{ pred.prediction }}</strong>
+                                            <strong class="red"> * {{ pred.prediction }}</strong>
                                         {% endif %}
                                          - {{ pred.field_val }}
                                     </h2>
