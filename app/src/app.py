@@ -20,8 +20,8 @@ def hello(name=None):
     return render_template('hello.html', name=name)
 
 
-@app.route('/login', methods=['POST', 'GET'])
-def login():
+@app.route('/index', methods=['POST', 'GET'])
+def index():
     error = None
     if request.method == 'POST':
 
@@ -34,7 +34,7 @@ def login():
         #     error = 'Invalid username/password'
     # the code below is executed if the request method
     # was GET or the credentials were invalid
-    return render_template('login.html', error=error)
+    return render_template('index.html', error=error)
 
 
 if __name__ == '__main__':
