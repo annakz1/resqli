@@ -204,7 +204,7 @@
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"><p><br></p></div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <input class="form-control" placeholder="Address" type="text" name="Address">
+                                        <input class="form-control" placeholder="address" type="text" name="address">
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <input class="send" type="submit" value="Submit">
@@ -217,7 +217,7 @@
             </div>
             <!-- end contact -->
             <!-- results -->
-            {% if prediction -%}
+            {% if predictions -%}
                 <div class="contact">
                     <div class="container-fluid padddd">
                         <div class="row">
@@ -230,9 +230,18 @@
                                     {% endif %}
                                 </div>
                             </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                            <textarea class="textarea" placeholder="{{product_name}}" type="text" name="Message">{{product_name}}</textarea>
-                        </div>
+                            {% for pred in predictions %}
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <h2>
+                                        {% if pred.prediction == 'Benign' -%}
+                                            <strong class="green">* {{ pred.prediction }}</strong>
+                                        {% else -%}
+                                            <strong class="red">{{ pred.prediction }}</strong>
+                                        {% endif %}
+                                         - {{ pred.field_val }}
+                                    </h2>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
