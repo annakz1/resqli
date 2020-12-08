@@ -26,15 +26,21 @@ class Model:
 
         chars_replaced = regex_chars_sub(preprocessed)
 
-        X_for_pred = {}
+        # X_for_pred = {}
 
+        features = []
         for ngramm in ngrams_to_use:
-            X_for_pred[ngramm] = chars_replaced.count(ngramm)
+            feature = chars_replaced.count(ngramm)
+            # X_for_pred[ngramm] = chars_replaced.count(ngramm)
+            features.append(feature)
 
         for word, _ in words_to_use:
-            X_for_pred[word] = preprocessed.count(word)
+            feature = preprocessed.count(word)
+            # X_for_pred[word] = feature
+            features.append(feature)
 
-        prediction = model.predict([pd.Series(X_for_pred)])[0]
+        # features = list(pd.Series(X_for_pred))
+        prediction = model.predict([features])[0]
         return prediction
 
 
@@ -42,6 +48,8 @@ def main():
     model = Model()
 
     in_str = "Select Epigrams from the Greek Anthology"
+    # in_str = "Between Ink and Shadows"
+
     prediction = model.predict_our_model(in_str)
 
     print(in_str)
