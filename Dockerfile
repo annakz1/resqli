@@ -1,18 +1,17 @@
 FROM ubuntu:16.04
 
 RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev && \
+    apt-get install -y python3-pip && \
+    pip3 install --upgrade pip && \
     apt-get install -y curl
 
-#WORKDIR /app
-
-ENV APPPATH /opt/myflaskapp
-COPY . $APPPATH
-WORKDIR $APPPATH/app
-#COPY . /app
-RUN pip install -r requirements.txt
+COPY * /app/
+WORKDIR /app
+RUN pip3 install -r requirements.txt
 
 
-ENTRYPOINT [ "python" ]
+
+
+ENTRYPOINT [ "python3" ]
 
 CMD [ "src/app.py" ]

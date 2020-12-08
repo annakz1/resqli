@@ -1,7 +1,10 @@
 from flask import Flask, render_template
 from flask import request
+import predict
 
 app = Flask(__name__)
+
+model = predict.Model()
 
 
 @app.route('/')
@@ -22,11 +25,15 @@ def hello(name=None):
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
+
     error = None
     if request.method == 'POST':
 
-        if request.form['username'] == "ofir":
-            return render_template('hello.html')
+        prediction = model.predict_our_model(request.form['username'])
+        if "SQLi" == prediction:
+            return render_template('hello.html', name=prediction)
+        #if request.form['username'] == "ofir":
+        #    return render_template('hello.html')
         # if valid_login(request.form['username'],
         #                request.form['password']):
         #     return log_the_user_in(request.form['username'])

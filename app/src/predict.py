@@ -14,7 +14,7 @@ def regex_chars_sub(x):
 
 class Model:
     def __init__(self):
-        with open("model.pkl", 'rb') as handle:
+        with open("src/model.pkl", 'rb') as handle:
             self.models_dict = pickle.load(handle)
 
     def predict_our_model(self, in_str):
