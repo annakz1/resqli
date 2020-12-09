@@ -1,0 +1,31 @@
+{% block body %}
+<div class="contact">
+    {% if predictions -%}
+    <div class="container-fluid padddd">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="title">
+                    {% if prediction == 'Benign' -%}
+                    <h2>Our Results: <strong class="green">{{ prediction }}</strong></h2>
+                    {% else -%}
+                    <h2>Our Results: <strong class="red">{{ prediction }}</strong></h2>
+                    {% endif %}
+                </div>
+            </div>
+            {% for pred in predictions %}
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <h2>
+                    {% if pred.prediction == 'Benign' -%}
+                    <strong class="green"> * {{ pred.prediction }}</strong>
+                    {% else -%}
+                    <strong class="red"> * {{ pred.prediction }}</strong>
+                    {% endif %}
+                    - {{ pred.field_val }}
+                </h2>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
